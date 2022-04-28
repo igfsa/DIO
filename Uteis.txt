@@ -1,1 +1,56 @@
-Iniciando o git: git init
+GERANDO E SINCRONIZANDO CHAVE SSH
+
+Gerando a chave:
+$ ssh-keygen -t ed25519 -C 'email do git'
+
+Acessando a chave:
+Entre no diretório onde a chave foi criada (/.ssh)
+
+Busque a chave com o comando:
+  $ cat id-ed25519.pub
+
+  Acessar o GitHub, ir em settings SSH keys/Add new e adicionar a chave encontrada no comando anterior
+
+INICIALIZANDO O SSH AGENT
+Novamente no terminal, digitar o seguinte comando:
+  $ eval $(ssh-agent -s)
+
+Passando o chave para o SSH agent:
+  $ ssh-add id_ed25519
+
+------------------------------------------------------------------------------------------------
+CLONANDO PASTAS DO GITHUB PARA O GIT
+Passando o caminho SSH para o git:
+  $ git clone 'caminho SSH retirado no GitHub'
+
+------------------------------------------------------------------------------------------------
+COMANDOS UTEIS GITHUB
+
+Configurando user e email no git
+  $ git config --global user.email "email(preferencialmente do git)"
+  $ git config --global user.name "username(preferencialmente do git)"
+
+Iniciando o git na pasta: 
+  $ git init
+
+Adicionando pastas ao repositório 
+  $ git add * (o parâmetro asterisco passa todos objetos)
+
+Commitando arquivos para o diretório do git
+  $ git commit .m "descrição das alterações"
+
+Exibindo o status dos arquivos (se há arquivos para serem enviados para o repositório, se há arquivos que foram modificados)
+  $ git status
+
+
+
+
+
+
+
+
+
+
+
+
+* obs.: aspas unicas são para indicar textos genéricos sem necessidade de aspas, aspas duplas são para indicar textos genéricos com necessidade de aspas
