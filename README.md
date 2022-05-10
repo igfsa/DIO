@@ -1,2 +1,2 @@
 # dio
-Repositorio de desafio DIO
+Repositorio de desafio e atividades DIO
