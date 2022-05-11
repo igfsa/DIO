@@ -36,7 +36,6 @@ function increment(){
     }
 }
 
-
 var adc = document.getElementById('adicionar');
 adc.addEventListener('click', increment);
 var sbtr = document.getElementById('subtrair')
