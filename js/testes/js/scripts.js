@@ -26,6 +26,10 @@ returnEvenValues([1, 3, 2, 6, 7, 4]);
 */
 
 /* 
+Operador condicional (ternario)
 
- */
+(condição) ? expressão1 : expressão2;
+condição         if         else
+                true       false
+*/
 
