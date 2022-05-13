@@ -227,7 +227,7 @@ nums = {
 }
 
 function somaThis(a, b){
-    console.log(this.num1 + this.num2 + a + b)
+    console.log(this.num1 + this.num2 + a + b);
 }
 
 somaThis.call(nums, 4, 5);
