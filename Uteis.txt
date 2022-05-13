@@ -1,3 +1,8 @@
+COMANDOS TERMINAL/VIM
+
+  Shift Z+Q
+    Sai de um arquivo no vim sem editar
+------------------------------------------------------------------------------------------------
 GERANDO E SINCRONIZANDO CHAVE SSH
 
 Gerando a chave:
@@ -24,7 +29,7 @@ Passando o caminho SSH para o git:
   $ git clone 'caminho SSH retirado no GitHub'
 
 ------------------------------------------------------------------------------------------------
-COMANDOS UTEIS GITHUB
+COMANDOS UTEIS GIT - GITHUB
 
 Configurando user e email no git
   $ git config --global user.email "email(preferencialmente do git)"
@@ -42,8 +47,9 @@ Commitando arquivos para o diretório do git
 Exibindo o status dos arquivos (se há arquivos para serem enviados para o repositório, se há arquivos que foram modificados)
   $ git status
 
-
-
+Alterando a descrição do último commit
+  $ git commit --amend
+	edite o texto e aperte :wq para sair do editor
 
 
 
