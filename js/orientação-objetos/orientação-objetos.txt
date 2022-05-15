@@ -1,0 +1,12 @@
+Orientação a objetos 
+Na programação orientada a objetos, os programas são funções que possuem uma série de propriedades
+Possui quatro pilares:
+-> Herança
+    Características herdadas pelos descendentes. O filho herda do pai
+-> Polimorfismo
+    Objetos podem herdad a mesma classe pai, mas se comportam de forma diferente quando invocados
+-> Encapsulamento
+    cada classe tem prorpiedades e métodos diferentes do resto do código
+-> Abstração
+    Generalização, isolar um estado de algo complexo, a fim de simplificar sua avaliação, classificação ou permitir a comunicação
+    Exemplo: um carro (complexo) é um veiculo (abstração) 

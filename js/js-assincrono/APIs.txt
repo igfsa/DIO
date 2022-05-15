@@ -1,0 +1,16 @@
+APIs ou application programming interface é uma forma de intermediar os resultados do back-end com o que é apresentado no front-end
+Possível acessá-la por meio de URLs
+Geralmente retornam seus dados no formato .json (JavaScript Object Notation), sendo necessário tratar os dados
+
+
+Método fetch
+Interação com APIs
+Retorna uma promisse, sendo necessário utilizar o await ao receber seus resultados
+principais operações no banco: post, get, put, delete, etc
+
+sintaxe:
+
+fetch(url, options)
+    .then(responde => responde.json())
+    .then(json => console.log(json))
+

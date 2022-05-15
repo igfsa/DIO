@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">
+            Lorem Ipsum
+        </h1>
+        <section id='descrição' class="texto">
+            <h2>Um pouco de Lorem Ipsum</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, aspernatur! Eum sequi nihil illum rerum dolorem perferendis voluptatum, magnam ipsum? Non velit debitis, ut a tempore nemo assumenda ipsa beatae!
+            </p>
+        </section>
+        <section id="lista" class="texto">
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+            </ul>
+
+        </section>
+        <button id="btn">Clique aqui</button>
+
+        <br><br>
+
+        <h1 onclick="mudaTexto(this)">Clique aqui</h1>
+        <!--Para adicionar eventos direto do HTML, basta colocar on<ação>-->
+        <script>
+            function mudaTexto(id) {
+                id.innerHTML = `Mudei!`
+            }
+        </script>
+    </div>
+
+    <footer>
+        <script src="DOM.js"></script>
+    </footer>
+</body>
+</html>
