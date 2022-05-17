@@ -1,0 +1,6 @@
+O TypeScript é um "Superconjunto do JavaScript"
+Um código escrito em TypeScript precisa passar por compilação para JS para ser rodado, por exemplo, no Node ou no Browser
+
+Adiciona tipagem estática ao JS
+Adiciona novos recursos como interface, modificadores de acesso, classes abstratas, permite criar variáveis de tipo, enum, inferência de tipos
+	obs.: o recurso de autocompletar dos editores de código são um recurso TypeScript

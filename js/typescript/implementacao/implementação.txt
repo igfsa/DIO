@@ -1,0 +1,36 @@
+para iniciar com o browser
+
+iniciar o npm
+  $ npm init
+
+instalar um bundler para compilar o código 
+  $ npm i parcel-bundler
+
+chamar o arquivo ts no HTML
+
+editar o arquivo package.json
+  Em scripts colocar o parâmetro "start": "parcel <documento>.html
+
+
+_________________________________________________________________________
+Para iniciar com o code runner
+
+iniciar o ts-node 
+  $ npm i ts-node -D
+
+dentro da pasta .vscode, criar e editar o arquivo setings.json e colocar a instrução abaixo
+  {
+      "code-runner.executorMap": {
+          "typescript": "npx ts-node --files",
+     }
+  }
+
+_________________________________________________________________________
+
+
+
+
+
+
+
+*obs.: lembrar do gitignore
