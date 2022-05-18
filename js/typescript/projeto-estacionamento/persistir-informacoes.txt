@@ -1,0 +1,39 @@
+criar uma função de leitura com a seguinte sintaxe:
+
+function ler() : Tipo[]{
+    // lendo as informações já existentes no JSON
+    return localStorage.<ambiente> ? JSON.parse(localStorage.<ambiente>) : [];
+}
+
+criar uma função de salvar
+function salvar(<item>: <Tipo>) {
+    // salvando as informações para o JSON
+    localStorage.setItem("ambiente", JSON.stringify(<item>));
+}
+
+usar uma função para buscar (função ler), concatenar as informações e salvar (função salvar)
+function adicionar(<item>: <Tipo>){
+    ....
+    ....
+
+    salvar([...ler(), veiculo])
+    // concatenando o split das informações anteriores com a nova informação e salvando no JSON
+}
+
+criar uma função de renderização
+function render() {
+    $("#patio")!.innerHTML = "";
+    // por sabermos que o retorno não será vazio, podemos usar o caractere ! para forçar o preenchimento 
+    cons patio = ler();
+
+    if(<ambiente>.length) {
+        <ambiente>.forEach(item => <metodoadicionar>(<item>))
+    }
+}
+
+
+
+
+
+
+ver implementação em script.ts

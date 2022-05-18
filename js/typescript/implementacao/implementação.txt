@@ -26,7 +26,71 @@ dentro da pasta .vscode, criar e editar o arquivo setings.json e colocar a instr
   }
 
 _________________________________________________________________________
+eslint
 
+instalar a extensão eslint
+
+iniciar o eslint 
+  $ npm i eslint -D
+
+fazer a integração do eslint com o TypeScript
+  & npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
+
+criar o arquivo eslintrc.js e colar o seguinte código:
+
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  rules: {},
+};
+
+_________________________________________________________________________
+prettier
+
+iniciar o prettier 
+  $ npm i prettier eslint-config-prettier eslint-plugin-prettier -D
+
+criar o arquivo .prettier.js
+module.exports = {
+  semi: true,
+  trailingComma: 'all',
+  singleQuote: true,
+  printWidth: 80,
+  tabWidth: 4,
+}
+
+_________________________________________________________________________
+tsconfig 
+  $ npx tsc --init
+
+_________________________________________________________________________
+iniciando um projeto typescript
+
+  $ npx -p typescript tsc --init
+
+_________________________________________________________________________
+transpilando um projeto typescript
+
+  $ npx -p typescript tsc
 
 
 
