@@ -1,0 +1,12 @@
+instalar o criador de projetos react
+  $ npm install -d create-react-app
+
+criar o projeto
+create-react-app <meu-app-react>
+
+dentro da pasta criada, iniciar o yarn
+  $ yarn start
+
+
+
+Ao sair, lembrar de encerrar o processo
