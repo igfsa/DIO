@@ -1,0 +1,139 @@
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: rgba(144, 167, 236, 0.63);
+    font-size: 1.6rem;
+}
+
+.titulo{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(76, 110, 212);
+}
+
+.container{
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.formulario {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input,
+button{
+    border-radius: 0.5rem;
+}
+
+button{
+    background-color: red;
+    border-color: tomato;
+    color: whitesmoke;
+    transition-property: background-color;
+    transition-duration: 500ms;
+}
+
+button:hover{
+    background-color: tomato;
+    border-color: red;
+}
+
+#cadastrar{
+    background-color: green;
+    border-color: greenyellow;
+}
+
+#cadastrar:hover{
+    background-color: greenyellow;
+    border-color: green;
+}
+
+.area-tabela{
+    margin-top: 3rem;
+    border-radius: 5rem;
+}
+
+.table{
+    border-radius: 5rem;
+    color: rgb(119, 119, 119);
+}
+
+thead{
+    background-color: rgb(94, 191, 223);
+    border-bottom: 0.1rem solid rgb(119, 119, 119);
+}
+
+.table>:not(:first-child){
+    border-top: 0.2rem solid rgb(119, 119, 119);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    background-color: rgb(147, 205, 224);
+    color: rgb(80, 80, 80);
+}
+
+.table-striped>tbody>tr:nth-of-type(even)>* {
+    background-color: lightblue;
+    color: rgb(80, 80, 80);
+}
+
+th:first-child {
+    width: 8rem;
+}
+
+th:first-child + th{
+    width: 8rem;
+}
+
+th:first-child + th + th{
+    width: 30rem;
+}
+
+th:first-child + th + th + th{
+    width: 5rem;
+}
+
+footer{
+    min-height: 5rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(76, 110, 212);
+}
+
+@media screen and (max-width: 50rem){
+    .formulario {
+        flex-direction: column;
+    }
+
+    input, button {
+        margin-top: 1rem;
+    }
+    
+    th:first-child {
+        width: auto;
+    }
+    
+    th:first-child + th{
+        width: auto;
+    }
+    
+    th:first-child + th + th{
+        width: auto;
+    }
+    
+    th:first-child + th + th + th{
+        width: auto;
+    }
+}

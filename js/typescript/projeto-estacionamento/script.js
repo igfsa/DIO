@@ -1,3 +1,4 @@
+// Corrigir erros da função de histórico
 (function () {
     var _a;
     const $ = (query) => document.querySelector(query);
@@ -40,8 +41,10 @@
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
             if (!confirm(`O veículo ${nome} permanceu por ${tempo}. Deseja encerrar?`))
                 return;
+            patioHistorico().moverHistorico(placa);
             salvar(ler().filter(veiculo => veiculo.placa !== placa));
             render();
+            patioHistorico().renderHistorico();
         }
         function render() {
             $("#patio").innerHTML = "";
@@ -52,14 +55,62 @@
         }
         return { ler, adicionar, remover, salvar, render };
     }
+    function patioHistorico() {
+        function lerHistorico() {
+            console.log(localStorage.patioHistorico ? JSON.parse(localStorage.patioHistorico) : []);
+            return localStorage.patioHistorico ? JSON.parse(localStorage.patioHistorico) : [];
+        }
+        function salvarHistorico(veiculosRemovidos) {
+            localStorage.setItem("historico-patio", JSON.stringify(veiculosRemovidos));
+        }
+        function renderHistorico() {
+            $("#historico-patio").innerHTML = "";
+            const historico = lerHistorico();
+            if (historico.length) {
+                historico.forEach((veiculo) => adicionarHistorico(veiculo, true));
+            }
+        }
+        function moverHistorico(placa) {
+            const { nome, entrada } = patio().ler().find(veiculo => veiculo.placa === placa);
+            const saida = new Date().toISOString();
+            const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
+            const veiculoRemovido = {
+                nome: nome,
+                placa: placa,
+                entrada: entrada,
+                saida: saida,
+                tempo: tempo,
+            };
+            adicionarHistorico(veiculoRemovido);
+            salvarHistorico([...lerHistorico(), veiculoRemovido]);
+            renderHistorico();
+        }
+        function adicionarHistorico(veiculoRemovido, salva) {
+            var _a;
+            const row = document.createElement("tr");
+            const { nome, entrada, placa, saida, tempo } = veiculoRemovido;
+            row.innerHTML = `
+            <td>${nome}</td>
+            <td class="placa">${placa}</td>
+            <td>${entrada}</td>
+            <td>${saida}</td>
+            <td>${tempo}</td>`;
+            (_a = $("#historico-patio")) === null || _a === void 0 ? void 0 : _a.appendChild(row);
+        }
+        return { lerHistorico, salvarHistorico, adicionarHistorico, renderHistorico, moverHistorico };
+    }
     patio().render();
+    patioHistorico().renderHistorico();
     (_a = $("#cadastrar")) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
         var _a, _b;
         const nome = (_a = $('#recebe-nome')) === null || _a === void 0 ? void 0 : _a.value;
         const placa = (_b = $('#recebe-placa')) === null || _b === void 0 ? void 0 : _b.value;
+        const placaArray = Array.from(document.getElementsByClassName("placa"));
         if (!nome || !placa) {
-            alert("Os campos nome e placa são obrigatórios");
-            return;
+            return alert("Os campos nome e placa são obrigatórios");
+        }
+        if (placaArray.filter((item) => item.innerHTML == placa).length != 0) {
+            return alert("Veiculo já existente");
         }
         patio().adicionar({ nome, placa, entrada: new Date().toISOString() }, true);
     });

@@ -1,0 +1,68 @@
+Webpack é um module buncler (empacotador de modulos) e a função e gerar um bundler que sera utilizado no HTML
+link: webpack.js.org
+
+principais conceitos:
+Entry - ponto de entrada para buscar todos módulos e dependências 
+Output - determinar quais são os bundlers que o webpack irá emitir
+Loaders - permite que o webpack gerencie arquivos que não são JS, como por exemplo, css, imagens...
+Plugins - Usados para otimização de pacores, minificação, injeção de scripts e mais 
+Mode - usado para qual abordagem de configuração, por exemplo, production, development ou none. Production tras otimizações internas e development é exectuado com plugins para facilitar o desenvolvimento
+
+implementação: https://www.dio.me/articles/configurando-react-webpack-e-babel-sem-erros-sem-sofrimento
+
+Criar um projeto react
+
+criar um arquivo webpack.config.js com o seguinte script:
+
+const path = require('path');
+
+    module.exports = {
+        entry: './src/index.js',
+        output : {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js'
+        },
+        module: {
+            rules:[
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node-modules/,
+                    use: {
+                        loader: "babel-loader"
+                    }
+                }
+            ]
+        }, 
+        externals: {
+            'react': "React"
+        }
+    }
+
+instalar o webpack
+  $ npm i -d webpack webpack-cli webpack-dev-server
+
+no arquivo package.json, inserir o seguinte código em "scripts"
+    "start": "webpack serve --open --mode development",   
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start:dev": "webpack-dev-server"
+
+rodar
+  $ npm run build
+
+instalar o babel
+  $ npm i -d @babel/core babel-loader @babel/preset-env @babel/preset-react
+
+criar o arquivo .babelrc e iserir o seguinte código: 
+    {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ]
+    }
+
+instalar o react e o react dom e o babel-preset-react
+  $ npm i react react-dom
+  $ npm i -d babel-preset-react
+
+  $ npm i -d html-webpack-plugin html-loader

@@ -100,3 +100,25 @@ th:first-child + th + th{
 th:first-child + th + th + th{
     width: 5rem;
 }
+
+.historico th:first-child {
+    width: 8rem;
+}
+
+.historico th:first-child + th{
+    width: 8rem;
+}
+
+.historico th:first-child + th + th{
+    width: 12.5rem;
+}
+
+.historico th:first-child + th + th + th{
+    width: 12.5rem;
+}
+
+.historico th:first-child + th + th + th + th{
+    width: 5rem;
+}
+
+

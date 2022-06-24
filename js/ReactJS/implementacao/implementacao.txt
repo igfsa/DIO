@@ -1,6 +1,8 @@
 instalar o criador de projetos react
   $ npm install -d create-react-app
 
+  $ npm install --save react@18.1.0 react-dom@18.1.0 react-scripts@5.0.1
+
 criar o projeto
 create-react-app <meu-app-react>
 
